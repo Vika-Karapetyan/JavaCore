@@ -1,5 +1,7 @@
 package homework.dynamicarray;
 
+import javax.swing.*;
+
 public class DynamicArray {
     //սա մեր հիմնական մասիվն է, որտեղ պահելու ենք ավելացվող էլեմենտները
     private int[] array = new int[10];
@@ -12,7 +14,7 @@ public class DynamicArray {
     public void add(int value) {
         if (size == array.length - 1) {
             extend();
-            array[size++]=value;
+            array[size++] = value;
         }
     }
 
@@ -39,10 +41,59 @@ public class DynamicArray {
 
     //տպել մասիվի ավելացված էլեմենտները
     public void print() {
-        for(int i=0;i< array.length;i++){
-            System.out.print(array[i]+" ");
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
         }
         System.out.println();
     }
+
+    public void deleteByIndex(int index) {
+        if (index >= 0 || index > array.length - 1)
+            for (int i = index; i < array.length; i++) {
+                array[i] = array[i + 1];
+            }
+        else {
+            System.out.println("Element with this index does not exist");
+        }
+        size--;
+    }
+
+    public void set(int index, int value) {
+        if (index >= 0 || index > array.length - 1) {
+            array[index] = value;
+        } else {
+            System.out.println("Element with this index does not exist");
+        }
+    }
+
+    public void add(int index, int value) {
+        if (index >= 0 || index > array.length - 1){
+            array[index]=value;
+        }
+        else{
+            System.out.println("Element with this index does not exist");
+        }
+        for(int i=index;i<size;i++){
+            array[i+1]=array[i];
+        }
+    }
+
+    public boolean exists(int value) {
+        for (int i = 0; i < size; i++) {
+            if(array [i] ==value){
+                return true;
+            }
+        }
+        return false;
+    }
+    public int getIndexByValue(int value) {
+        for (int i = 0; i < size; i++) {
+            if (array[i] == value) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
 
 }
