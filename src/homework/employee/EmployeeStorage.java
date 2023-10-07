@@ -34,6 +34,25 @@ public class EmployeeStorage {
         }
     }
 
+    public void deleteByEmployeeID(String keyword) {
+        for (int i = 0; i < size; i++) {
+            size--;
+        }
+    }
+
+    public void changeByEmployeeID(String employeeID, String name, String surname,
+                                   int salary, String company, String position) {
+        for (int i = 0; i < size; i++) {
+            if (employees[i].getEmployeeID().equals(employeeID)) {
+                employees[i].setName(name);
+                employees[i].setSurname(surname);
+                employees[i].setSalary(salary);
+                employees[i].setCompany(company);
+                employees[i].setPosition(position);
+            }
+        }
+    }
+
     private void extend() {
         Employee[] tmp = new Employee[employees.length + 10];
         System.arraycopy(employees, 0, tmp, 0, employees.length);

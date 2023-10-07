@@ -10,10 +10,11 @@ public class EmployeeDemo {
         boolean isRan = true;
         while (isRan) {
             System.out.println("Please input 0 for Exit");
-            System.out.println("Please input 1 ADD EMPLOYEE");
-            System.out.println("Please input 2 PRINT ALL EMPLOYEE");
-            System.out.println("Please input 3 SEARCH EMPLOYEE BY EMPLOYEE ID");
-            System.out.println("Please input 4 SEARCH EMPLOYEE BY COMPANY NAME");
+            System.out.println("Please input 1 for ADD EMPLOYEE");
+            System.out.println("Please input 2 for PRINT ALL EMPLOYEE");
+            System.out.println("Please input 3 for SEARCH EMPLOYEE BY EMPLOYEE ID");
+            System.out.println("Please input 4 for SEARCH EMPLOYEE BY COMPANY NAME");
+            System.out.println("Please input 5 for DELETE EMPLOYEE BY ID");
             switch (scanner.nextLine()) {
                 case "0":
                     isRan = false;
@@ -45,8 +46,13 @@ public class EmployeeDemo {
                     break;
                 case "4":
                     System.out.println("Please input company name");
-                    String positionSearch = scanner.nextLine();
-                    employeeStorage.searchByCompanyName(positionSearch);
+                    String companySearch = scanner.nextLine();
+                    employeeStorage.searchByCompanyName(companySearch);
+                    break;
+                case "5":
+                    System.out.println("Please input employeeID");
+                    String deleteEmployee=scanner.nextLine();
+                    employeeStorage.deleteByEmployeeID(deleteEmployee);
                     break;
                 default:
                     System.out.println("Invalid command.Try again!");

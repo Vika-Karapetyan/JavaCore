@@ -2,11 +2,11 @@ package homework.employee;
 
 public class Employee {
     private String name;
-        private String surname;
-        private String employeeID;
-        private int salary;
-        private String company;
-        private String position;
+    private String surname;
+    private String employeeID;
+    private int salary;
+    private String company;
+    private String position;
 
     public Employee(String name, String surname, String employeeID, int salary, String company, String position) {
         this.name = name;
@@ -66,5 +66,16 @@ public class Employee {
 
     public void setPosition(String position) {
         this.position = position;
+    }
+
+    public String toString() {
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", employeeID='" + employeeID + '\'' +
+                ", salary=" + salary +
+                ", company='" + company + '\'' +
+                ", position='" + position + '\'' +
+                '}';
     }
 }
