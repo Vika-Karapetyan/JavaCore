@@ -36,9 +36,12 @@ public class EmployeeStorage {
 
     public void deleteByEmployeeID(String keyword) {
         for (int i = 0; i < size; i++) {
+            employees[i] = employees[i + 1];
             size--;
         }
+        System.out.println("Employee is deleted");
     }
+
 
     public void changeByEmployeeID(String employeeID, String name, String surname,
                                    int salary, String company, String position) {
