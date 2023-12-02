@@ -5,9 +5,13 @@ public class Box {
     double height;
     double depth;
 
-    void volume() {
-        System.out.println("Volume is equal");
-        System.out.println(width * height * depth);
+    double volume() {
+        return width * height * depth;
+    }
+    void SetDim(double w,double h,double d){
+        width=w;
+        height=h;
+        depth=d;
     }
 }
 
